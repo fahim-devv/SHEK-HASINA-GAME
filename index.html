@@ -15,7 +15,6 @@
             justify-content: center;
             height: 100vh;
         }
-        /* Black canvas background to blend with your image */
         canvas {
             background: #000000; 
             display: block;
@@ -42,9 +41,16 @@
 <body>
 
     <canvas id="gameCanvas" width="400" height="200"></canvas>
-    <!-- Jump Button -->
-    <div class="jump-btn" onclick="jump()">Jump</div> 
+    <div class="jump-btn" onclick="jump()">Jump / Restart</div> 
 
     <script src="game.js"></script>
+    <script>
+        // Optional: Allows you to press 'Spacebar' or 'ArrowUp' to jump too!
+        window.addEventListener("keydown", function(e) {
+            if (e.code === "Space" || e.code === "ArrowUp") {
+                jump();
+            }
+        });
+    </script>
 </body>
 </html>
